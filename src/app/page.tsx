@@ -1,95 +1,56 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Hero from "@/components/hero/hero";
+import Card from "@/components/card/card";
+import styles from "./page.module.css";
+
+// Cards Images
+import Icon1 from "../assets/Group.svg";
+import Icon2 from "../assets/2.svg";
+import Icon3 from "../assets/3.svg";
+
+interface CardsData {
+  title: string;
+  description: string;
+  icon: any;
+}
+
+const CardsData: CardsData[] = [
+  {
+    title: "Integrate",
+    description:
+      "The ability to quickly set up and customize workflows for just about anything.",
+    icon: Icon1,
+  },
+  {
+    title: "Colaborate",
+    description:
+      "Manage projects, organize tasks, and build team spirit—all in one place.",
+    icon: Icon2,
+  },
+  {
+    title: "Succeed",
+    description:
+      "Every single part of your task can be managed, tracked, and shared with teammates.",
+    icon: Icon3,
+  },
+];
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <Hero />
+      <div className={styles.cards}>
+        <ul className={styles.cards__list}>
+          {CardsData.map((card, index) => (
+            <li key={index}>
+              <Card
+                title={card.title}
+                description={card.description}
+                icon={card.icon}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </main>
-  )
+  );
 }
