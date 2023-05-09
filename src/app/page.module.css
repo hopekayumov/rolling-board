@@ -31,9 +31,24 @@
 }
 
 /* Card section */
+.cards {
+  margin-bottom: 100px;
+}
 
 .cards__list {
   display: flex;
+  list-style-type: none;
   align-items: center;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.purpose__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }

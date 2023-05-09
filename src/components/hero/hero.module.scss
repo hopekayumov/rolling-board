@@ -43,8 +43,8 @@
     border-radius: 10px;
     border: none;
     color: #fff;
-    background-color: rgb(38, 38, 243);
-    box-shadow: rgba(32, 101, 209, 0.24) 0px 8px 16px 0px;
+    background: linear-gradient(43.66deg, #0073FF 15.79%, #1090f9 81.22%);
+    box-shadow: 5px 5px 25px rgba(0, 177, 227, 0.31);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     -webkit-tap-highlight-color: transparent;
     transition: 0.2s ease;
